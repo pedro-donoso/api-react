@@ -1,10 +1,16 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 
 const Header = () => {
   return (
     <View>
-        <Text>Header</Text>
+        <View>
+          <Text>Explore</Text>
+        </View>
+        <View>
+          <Image source={require('../../assets/nasa.png')}/>
+        </View>
+        
     </View>
   )
 };

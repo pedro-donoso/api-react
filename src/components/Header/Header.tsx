@@ -1,18 +1,26 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 
 const Header = () => {
   return (
-    <View>
-        <View>
-          <Text>Explore</Text>
+    <View style={styles.container}>
+        <View style={styles.leftContainer}>
+          <Text style={styles.title}>Explore</Text>
         </View>
-        <View>
-          <Image source={require('../../assets/nasa.png')}/>
+        <View style={styles.rightContainer}>
+          <Image source={require('../../assets/nasa.png')} style={styles.image}/>
         </View>
         
     </View>
   )
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center'
+  }
+});
 
 export default Header;

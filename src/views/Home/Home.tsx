@@ -9,6 +9,7 @@ import fetchApi from "../../utils/fetch";
 
 const Home = () => {
  const [todaysImage, setTodaysImage] = useState<PostImage>({});
+ const [lastFiveDaysImages, setLastFiveDaysImages] = useState<PostImage[]>([]);
 
  useEffect(() => {
   const loadTodaysImage = async () => {
@@ -31,7 +32,7 @@ const Home = () => {
      `&start_date=${fiveDaysAgoDate}&end_date=${todaysDate}`
     );
 
-    console.log(lastFiveDaysImagesResponse);
+    setLastFiveDaysImages(lastFiveDaysImagesResponse);
    } catch (error) {
     console.log(error);
    }
@@ -40,6 +41,9 @@ const Home = () => {
   loadTodaysImage().catch(null);
   loadLast5DaysImages().catch(null);
  }, []);
+
+ console.log(lastFiveDaysImages);
+ 
 
  return (
   <View style={styles.container}>

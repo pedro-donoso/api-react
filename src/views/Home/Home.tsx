@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { View, StyleSheet } from "react-native";
 import { format, sub } from "date-fns";
-
 import Header from "../../components/Header";
 import TodaysImage from "../../components/TodaysImage";
+import LastFiveDaysImages from "../../components/LastFiveDaysImages";
 import { PostImage } from "../../types";
 import fetchApi from "../../utils/fetch";
 
@@ -42,13 +42,11 @@ const Home = () => {
   loadLast5DaysImages().catch(null);
  }, []);
 
- console.log(lastFiveDaysImages);
- 
-
  return (
   <View style={styles.container}>
    <Header />
    <TodaysImage {...todaysImage} />
+   <LastFiveDaysImages postImages= {lastFiveDaysImages}/>
   </View>
  );
 };

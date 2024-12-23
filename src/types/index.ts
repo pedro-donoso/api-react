@@ -10,5 +10,5 @@ export type PostImage = {
 
 export type RootStackParams = {
   Home: undefined;
-  Detail: { itemId: number };
+  Detail: PostImage;
 };

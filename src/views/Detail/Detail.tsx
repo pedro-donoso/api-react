@@ -12,16 +12,17 @@ const Detail = () => {
 
  return (
   <View style={styles.container}>
-    <Header />
-    <View style={styles.content}>
-      <Image source={{ uri: url }} style={styles.image} />
-      <Text style={styles.title}>{title}</Text>
-      <Text style={styles.date}>{date}</Text>
+   <Header />
+   <View style={styles.content}>
+    <View style={styles.imageContainer}>
+     <Image source={{ uri: url }} style={styles.image} resizeMode="cover" />
     </View>
-    <ScrollView style={styles.explanationContainer}>
-      <Text style={styles.explanation} >{explanation}</Text>
-    </ScrollView>
-   
+    <Text style={styles.title}>{title}</Text>
+    <Text style={styles.date}>{date}</Text>
+   </View>
+   <ScrollView style={styles.explanationContainer}>
+    <Text style={styles.explanation}>{explanation}</Text>
+   </ScrollView>
   </View>
  );
 };
@@ -31,40 +32,49 @@ const styles = StyleSheet.create({
   flex: 1,
   paddingHorizontal: 16,
   backgroundColor: "rgba(7,26,93,255)",
-  height: '100%'
  },
  content: {
-  backgroundColor: '#2c449d',
+  backgroundColor: "#2c449d",
   borderRadius: 32,
   marginVertical: 24,
   padding: 16,
-  height: '100%',
   flex: 1
  },
- image: {
-  width: '100%',
-  height: '50%',
-  borderColor: '#FFF',
+ imageContainer: {
+  position: "relative",
+  width: "100%",
+  height: "100%", // Ajusta la altura según sea necesario
   borderRadius: 32,
-  borderWidth: 2,
-  marginBottom: 16
+  overflow: "hidden", // Asegúrate de que el contenido que sobresale se oculte
+  marginBottom: 16,
+ },
+ image: {
+  width: "100%",
+  height: "100%", // Asegúrate de que la imagen ocupe todo el contenedor
+  position: "absolute", // Asegúrate de que la imagen esté posicionada correctamente
+  top: 0,
+  left: 0,
  },
  title: {
-  color: '#FFF',
+  color: "#FFF",
   fontSize: 22,
-  fontWeight: 'bold',
-  marginBottom: 16
+  fontWeight: "bold",
+  marginBottom: 4, // Espacio entre el título y la fecha
  },
  date: {
-  color: '#FFF',
-  fontSize: 16
+  color: "#FFF",
+  fontSize: 16,
+  marginBottom: 24, // Aumentar el margen inferior para más espacio
  },
  explanationContainer: {
-  marginVertical: 16
+  marginVertical: 16,
  },
  explanation: {
-  color: '#FFF'
- }
+  color: "#FFF",
+  fontSize: 16,
+  marginTop: 120, // Aumentar el margen superior para más espacio
+  textAlign: "justify", // Justificar el texto
+ },
 });
 
 export default Detail;

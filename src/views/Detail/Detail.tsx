@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParams } from "../../types";
@@ -18,7 +18,10 @@ const Detail = () => {
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.date}>{date}</Text>
     </View>
-   <Text>Detail</Text>
+    <ScrollView style={styles.explanationContainer}>
+      <Text style={styles.explanation} >{explanation}</Text>
+    </ScrollView>
+   
   </View>
  );
 };
@@ -28,18 +31,39 @@ const styles = StyleSheet.create({
   flex: 1,
   paddingHorizontal: 16,
   backgroundColor: "rgba(7,26,93,255)",
+  height: '100%'
  },
  content: {
-
+  backgroundColor: '#2c449d',
+  borderRadius: 32,
+  marginVertical: 24,
+  padding: 16,
+  height: '100%',
+  flex: 1
  },
  image: {
-
+  width: '100%',
+  height: '50%',
+  borderColor: '#FFF',
+  borderRadius: 32,
+  borderWidth: 2,
+  marginBottom: 16
  },
  title: {
-
+  color: '#FFF',
+  fontSize: 22,
+  fontWeight: 'bold',
+  marginBottom: 16
  },
  date: {
-  
+  color: '#FFF',
+  fontSize: 16
+ },
+ explanationContainer: {
+  marginVertical: 16
+ },
+ explanation: {
+  color: '#FFF'
  }
 });
 

@@ -13,6 +13,7 @@ const routeScreenDefaultOptions = {
  headerTitleStyle: {
   color: "#FFF",
  },
+ headerTintColor: "#FFF"
 };
 
 const Routes = () => (

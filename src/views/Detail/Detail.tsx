@@ -1,12 +1,82 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
+import { useRoute } from "@react-navigation/native";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { RootStackParams } from "../../types";
+import Header from "../../components/Header";
 
 const Detail = () => {
-  return (
-    <View>
-      <Text>Detail</Text>
+ const {
+  params: { title, url, explanation, date },
+ } = useRoute<NativeStackScreenProps<RootStackParams, "Detail">["route"]>();
+
+ return (
+  <View style={styles.container}>
+   <Header />
+   <View style={styles.content}>
+    <View style={styles.imageContainer}>
+     <Image source={{ uri: url }} style={styles.image} resizeMode="cover" />
     </View>
-  );
+    <Text style={styles.title}>{title}</Text>
+    <Text style={styles.date}>{date}</Text>
+   </View>
+   <ScrollView style={styles.explanationContainer}>
+    <Text style={styles.explanation}>{explanation}</Text>
+   </ScrollView>
+  </View>
+ );
 };
+
+const styles = StyleSheet.create({
+ container: {
+
+  paddingHorizontal: 16,
+  backgroundColor: "#2c449d",
+  height: "100%"
+ },
+ content: {
+  backgroundColor: "rgba(7,26,93,255)",
+  height: 290,
+  borderRadius: 32,
+  marginVertical: 24,
+  padding: 16
+ },
+ imageContainer: {
+  position: "relative",
+  width: "100%",
+  height: 190,
+  borderRadius: 32,
+  overflow: "hidden",
+  marginBottom: 8,
+  borderWidth: 2,
+  borderColor: "#FFF"
+ },
+ image: {
+  width: "100%",
+  height: 190,
+  resizeMode: "cover"
+ },
+ title: {
+  color: "#FFF",
+  fontSize: 22,
+  fontWeight: "bold",
+  marginBottom: 4,
+ },
+ date: {
+  color: "#FFF",
+  fontSize: 16,
+  marginBottom: 12,
+ },
+ explanationContainer: {
+  marginVertical: 16,
+ },
+ explanation: {
+  color: "#FFF",
+  fontSize: 16,
+  marginTop: 10,
+  textAlign: "justify", 
+  paddingHorizontal: 20
+ },
+});
 
 export default Detail;

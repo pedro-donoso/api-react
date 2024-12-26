@@ -19,27 +19,27 @@ const Detail = () => {
     </View>
     <Text style={styles.title}>{title}</Text>
     <Text style={styles.date}>{date}</Text>
+    <Text style={styles.titleExplanation}>Explanation: </Text>
+    <ScrollView style={styles.explanationContainer}>
+     <Text style={styles.explanation}>{explanation}</Text>
+    </ScrollView>
    </View>
-   <ScrollView style={styles.explanationContainer}>
-    <Text style={styles.explanation}>Explanation: </Text>
-    <Text style={styles.explanation}>{explanation}</Text>
-   </ScrollView>
   </View>
  );
 };
 
 const styles = StyleSheet.create({
  container: {
-
   paddingHorizontal: 16,
   backgroundColor: "#2c449d",
-  height: "100%"
+  height: "100%",
  },
  content: {
   backgroundColor: "rgba(7,26,93,255)",
-  height: 300,
-  marginVertical: 24,
-  padding: 10
+  height: "85%",
+  marginVertical: 12,
+  padding: 8,
+  borderRadius: 24
  },
  imageContainer: {
   position: "relative",
@@ -48,31 +48,40 @@ const styles = StyleSheet.create({
   overflow: "hidden",
   marginBottom: 8,
   borderWidth: 2,
-  borderColor: "#FFF"
+  borderColor: "#FFF",
+  borderRadius: 24
  },
  image: {
   width: "100%",
   height: 190,
-  resizeMode: "cover"
+  resizeMode: "cover",
  },
  title: {
   color: "#FFF",
-  fontSize: 22,
-  fontWeight: "bold"
+  fontSize: 20, // Ajustado para ser un poco más pequeño
+  fontWeight: "bold",
+  marginVertical: 4, // Añadido para espaciado
  },
  date: {
   color: "#FFF",
-  fontSize: 16
+  fontSize: 14, // Ajustado para ser un poco más pequeño
+  marginBottom: 8, // Añadido para espaciado
+ },
+ titleExplanation: {
+  color: "#FFF",
+  fontWeight: "bold",
+  paddingBottom: 8
  },
  explanationContainer: {
-  marginVertical:8,
+  marginVertical: 2, // Reducido
  },
  explanation: {
   color: "#FFF",
-  fontSize: 16,
-  marginVertical: 6,
+  fontSize: 14, // Ajustado para ser un poco más pequeño
+  marginVertical: 2, // Reducido
   textAlign: "justify",
-  paddingHorizontal: 16
+  paddingHorizontal: 8, // Reducido
+  marginBottom: 32
  },
 });
 

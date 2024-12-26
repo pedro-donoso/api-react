@@ -8,7 +8,7 @@ const LastFiveDaysImages: FC<{ postImages?: PostImageTypes[] }> = ({ postImages 
   <View style={styles.container}>
    <Text style={styles.title}>Last 5 Days</Text>
    <ScrollView style={styles.content}>
-    {postImages?.map((postImage) => (
+    {postImages?.slice().reverse().map((postImage) => (
      <PostImage
       key={`post-image-${postImage.title}`}
       {...postImage}

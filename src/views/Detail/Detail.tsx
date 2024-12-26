@@ -21,6 +21,7 @@ const Detail = () => {
     <Text style={styles.date}>{date}</Text>
    </View>
    <ScrollView style={styles.explanationContainer}>
+    <Text style={styles.explanation}>Explanation: </Text>
     <Text style={styles.explanation}>{explanation}</Text>
    </ScrollView>
   </View>
@@ -36,16 +37,14 @@ const styles = StyleSheet.create({
  },
  content: {
   backgroundColor: "rgba(7,26,93,255)",
-  height: 290,
-  borderRadius: 32,
+  height: 300,
   marginVertical: 24,
-  padding: 16
+  padding: 10
  },
  imageContainer: {
   position: "relative",
   width: "100%",
   height: 190,
-  borderRadius: 32,
   overflow: "hidden",
   marginBottom: 8,
   borderWidth: 2,
@@ -59,23 +58,21 @@ const styles = StyleSheet.create({
  title: {
   color: "#FFF",
   fontSize: 22,
-  fontWeight: "bold",
-  marginBottom: 4,
+  fontWeight: "bold"
  },
  date: {
   color: "#FFF",
-  fontSize: 16,
-  marginBottom: 12,
+  fontSize: 16
  },
  explanationContainer: {
-  marginVertical: 16,
+  marginVertical:8,
  },
  explanation: {
   color: "#FFF",
   fontSize: 16,
-  marginTop: 10,
-  textAlign: "justify", 
-  paddingHorizontal: 20
+  marginVertical: 6,
+  textAlign: "justify",
+  paddingHorizontal: 16
  },
 });
 

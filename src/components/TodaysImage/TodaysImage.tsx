@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   marginVertical: 16,
   marginHorizontal: 24,
   borderRadius: 32,
-  padding: 16,
+  padding: 16
  },
  image: {
   width: "100%",

@@ -29,42 +29,43 @@ const Detail = () => {
 
 const styles = StyleSheet.create({
  container: {
-  flex: 1,
+
   paddingHorizontal: 16,
-  backgroundColor: "rgba(7,26,93,255)",
+  backgroundColor: "#2c449d",
+  height: "100%"
  },
  content: {
-  backgroundColor: "#2c449d",
+  backgroundColor: "rgba(7,26,93,255)",
+  height: 290,
   borderRadius: 32,
   marginVertical: 24,
-  padding: 16,
-  flex: 1
+  padding: 16
  },
  imageContainer: {
   position: "relative",
   width: "100%",
-  height: "100%", // Ajusta la altura según sea necesario
+  height: 190,
   borderRadius: 32,
-  overflow: "hidden", // Asegúrate de que el contenido que sobresale se oculte
-  marginBottom: 16,
+  overflow: "hidden",
+  marginBottom: 8,
+  borderWidth: 2,
+  borderColor: "#FFF"
  },
  image: {
   width: "100%",
-  height: "100%", // Asegúrate de que la imagen ocupe todo el contenedor
-  position: "absolute", // Asegúrate de que la imagen esté posicionada correctamente
-  top: 0,
-  left: 0,
+  height: 190,
+  resizeMode: "cover"
  },
  title: {
   color: "#FFF",
   fontSize: 22,
   fontWeight: "bold",
-  marginBottom: 4, // Espacio entre el título y la fecha
+  marginBottom: 4,
  },
  date: {
   color: "#FFF",
   fontSize: 16,
-  marginBottom: 24, // Aumentar el margen inferior para más espacio
+  marginBottom: 12,
  },
  explanationContainer: {
   marginVertical: 16,
@@ -72,8 +73,9 @@ const styles = StyleSheet.create({
  explanation: {
   color: "#FFF",
   fontSize: 16,
-  marginTop: 120, // Aumentar el margen superior para más espacio
-  textAlign: "justify", // Justificar el texto
+  marginTop: 10,
+  textAlign: "justify", 
+  paddingHorizontal: 20
  },
 });
 
